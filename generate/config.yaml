@@ -1,0 +1,50 @@
+generator:
+  base: internal
+  oasPath: /Users/tposse/personal/launchpad-core/ent/openapi.json
+
+oapi-codegen: {}
+
+terraform:
+  provider:
+    name: launchpad
+    schema_ref: '#/components/schemas/Provider'
+
+  resources:
+    mission:
+      create:
+        path: /missions
+        method: POST
+      update:
+        path: /missions/{id}
+        method: PATCH
+      read:
+        path: /missions/{id}
+        method: GET
+      delete:
+        path: /missions/{id}
+        method: DELETE
+
+    rocket:
+      create:
+        path: /rockets
+        method: POST
+      update:
+        path: /rockets/{id}
+        method: PATCH
+      read:
+        path: /rockets/{id}
+        method: GET
+      delete:
+        path: /rockets/{id}
+        method: DELETE
+
+  data_sources:
+    mission:
+      read:
+        path: /missions/{id}
+        method: GET
+    
+    rocket:
+      read:
+        path: /rockets/{id}
+        method: GET

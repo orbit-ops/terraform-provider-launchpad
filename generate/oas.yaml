@@ -1,0 +1,8 @@
+generate:
+    client: true
+    models: true
+output: /Users/tposse/personal/terraform-provider-launchpad/internal/clients/clients.gen.go
+output-options:
+    exclude-tags:
+        - x-tf-ignore
+package: clients

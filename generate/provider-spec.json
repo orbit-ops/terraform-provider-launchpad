@@ -1,0 +1,220 @@
+{
+	"datasources": [
+		{
+			"name": "mission",
+			"schema": {
+				"attributes": [
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "ID of the Mission"
+						}
+					},
+					{
+						"name": "description",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "duration",
+						"int64": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "min_approvers",
+						"int64": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "possible_approvers",
+						"list": {
+							"computed_optional_required": "computed",
+							"element_type": {
+								"string": {}
+							}
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "rocket",
+			"schema": {
+				"attributes": [
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "required",
+							"description": "ID of the Rocket"
+						}
+					},
+					{
+						"name": "code",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "config",
+						"map": {
+							"computed_optional_required": "computed",
+							"element_type": {
+								"string": {}
+							}
+						}
+					},
+					{
+						"name": "description",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "computed"
+						}
+					}
+				]
+			}
+		}
+	],
+	"provider": {
+		"name": "launchpad",
+		"schema": {
+			"attributes": [
+				{
+					"name": "api_key",
+					"string": {
+						"optional_required": "required"
+					}
+				},
+				{
+					"name": "endpoint",
+					"string": {
+						"optional_required": "required"
+					}
+				}
+			]
+		}
+	},
+	"resources": [
+		{
+			"name": "mission",
+			"schema": {
+				"attributes": [
+					{
+						"name": "description",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "duration",
+						"int64": {
+							"computed_optional_required": "required"
+						}
+					},
+					{
+						"name": "min_approvers",
+						"int64": {
+							"computed_optional_required": "required"
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required"
+						}
+					},
+					{
+						"name": "possible_approvers",
+						"list": {
+							"computed_optional_required": "required",
+							"element_type": {
+								"string": {}
+							}
+						}
+					},
+					{
+						"name": "requests",
+						"list": {
+							"computed_optional_required": "computed_optional",
+							"element_type": {
+								"string": {}
+							}
+						}
+					},
+					{
+						"name": "rockets",
+						"list": {
+							"computed_optional_required": "required",
+							"element_type": {
+								"string": {}
+							}
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "ID of the Mission"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "rocket",
+			"schema": {
+				"attributes": [
+					{
+						"name": "code",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "config",
+						"map": {
+							"computed_optional_required": "required",
+							"element_type": {
+								"string": {}
+							}
+						}
+					},
+					{
+						"name": "description",
+						"string": {
+							"computed_optional_required": "computed_optional"
+						}
+					},
+					{
+						"name": "name",
+						"string": {
+							"computed_optional_required": "required"
+						}
+					},
+					{
+						"name": "id",
+						"string": {
+							"computed_optional_required": "computed",
+							"description": "ID of the Rocket"
+						}
+					}
+				]
+			}
+		}
+	],
+	"version": "0.1"
+}

@@ -1,0 +1,39 @@
+data_sources:
+    mission:
+        read:
+            method: GET
+            path: /missions/{id}
+    rocket:
+        read:
+            method: GET
+            path: /rockets/{id}
+provider:
+    name: launchpad
+    schema_ref: '#/components/schemas/Provider'
+resources:
+    mission:
+        create:
+            method: POST
+            path: /missions
+        delete:
+            method: DELETE
+            path: /missions/{id}
+        read:
+            method: GET
+            path: /missions/{id}
+        update:
+            method: PATCH
+            path: /missions/{id}
+    rocket:
+        create:
+            method: POST
+            path: /rockets
+        delete:
+            method: DELETE
+            path: /rockets/{id}
+        read:
+            method: GET
+            path: /rockets/{id}
+        update:
+            method: PATCH
+            path: /rockets/{id}
